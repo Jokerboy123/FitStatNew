@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FitStat.Mobile"
+             x:Class="FitStat.Mobile.RegistryPage"
+             x:DataType="local:RegistryPageViewModel"
+             
+             BindingContext="local:RegistryPageViewModel"
+             Title="Регистрация"
+                          BackgroundColor="WhiteSmoke">
+
+
+    <VerticalStackLayout>
+        <Label  Margin="10,10,10,10" Text="Заполните поля ниже для регистрации" HorizontalOptions="CenterAndExpand"/>
+        
+                                                        <!--Логин пользователя-->
+        <Rectangle  HorizontalOptions="CenterAndExpand" WidthRequest="350" HeightRequest="50" RadiusX="3" StrokeThickness="1" Stroke="black"  RadiusY="3"  />
+
+        <Entry x:Name="log" Margin="45,-45,10,10" Placeholder="Логин" Text="{Binding RegisterUser.UserName}"/>
+
+                                                        <!--Имя пользователя-->
+        
+        <Rectangle HorizontalOptions="CenterAndExpand" WidthRequest="350" HeightRequest="50" RadiusX="3" StrokeThickness="1" Stroke="black"  RadiusY="3"  />
+
+        <Entry Margin="45,-45,10,10" Placeholder="Имя" Text="{Binding RegisterUser.FirstName}"/>
+
+
+                                                        <!--Отчество пользователя-->
+        <Rectangle HorizontalOptions="CenterAndExpand" WidthRequest="350" HeightRequest="50" RadiusX="3" StrokeThickness="1" Stroke="black"  RadiusY="3"  />
+
+        <Entry Margin="45,-45, 10,10" Placeholder="Отчество" Text="{Binding RegisterUser.MiddleName}" />
+
+                                                        <!--Фамилия пользователя-->
+        <Rectangle HorizontalOptions="CenterAndExpand" WidthRequest="350" HeightRequest="50" RadiusX="3" StrokeThickness="1" Stroke="black"  RadiusY="3"  />
+
+        <Entry Margin="45,-45, 10,10" Placeholder="Фамилия" Text="{Binding RegisterUser.LastName}" />
+
+                                                        <!--eMail пользователя-->
+        <Rectangle HorizontalOptions="CenterAndExpand" WidthRequest="350" HeightRequest="50" RadiusX="3" StrokeThickness="1" Stroke="black"  RadiusY="3"  />
+
+        <Entry Margin="45,-45,10,10" Placeholder="E-Mail" Text="{Binding RegisterUser.Email}"/>
+
+                                                        <!--Password пользователя-->
+        <Rectangle HorizontalOptions="CenterAndExpand" WidthRequest="350" HeightRequest="50" RadiusX="3" StrokeThickness="1" Stroke="black"  RadiusY="3"  />
+       
+        <Entry Margin="45,-45,10,10" Placeholder="Пароль" Text="{Binding RegisterUser.Password}"/>
+
+                                                        <!--Город пользователя-->
+        <Rectangle HorizontalOptions="CenterAndExpand" WidthRequest="350" HeightRequest="50" RadiusX="3" StrokeThickness="1" Stroke="black"  RadiusY="3"  />
+
+
+        <Entry Margin="45,-45,10,10" Placeholder="Город" Text="{Binding RegisterUser.City}"/>
+
+                                                        <!--Номер телефона пользователя-->
+        <Rectangle HorizontalOptions="CenterAndExpand" WidthRequest="350" HeightRequest="50" RadiusX="3" StrokeThickness="1" Stroke="black"  RadiusY="3"  />
+
+        <Entry Margin="45,-45,10,10" Placeholder="Номер телефона" Text="{Binding RegisterUser.PhoneNumber}"/>
+
+                                                         <!--Индекс пользователя-->
+        <Rectangle HorizontalOptions="CenterAndExpand" WidthRequest="350" HeightRequest="50" RadiusX="3" StrokeThickness="1" Stroke="black"  RadiusY="3"  />
+
+        <Entry  Margin="45,-45,10,10" Placeholder="Индекс" Text="{Binding RegisterUser.ZipCode}"/>
+
+                                                         <!--Адрес пользователя-->
+        <Rectangle HorizontalOptions="CenterAndExpand" WidthRequest="350" HeightRequest="50" RadiusX="3" StrokeThickness="1" Stroke="black"  RadiusY="3"  />
+
+        <Entry  Margin="45,-45,10,10" Placeholder="Адрес" Text="{Binding RegisterUser.Address1}"/>
+        
+                                                        <!--Адрес пользователя-->
+        <Rectangle HorizontalOptions="CenterAndExpand" WidthRequest="350" HeightRequest="50" RadiusX="3" StrokeThickness="1" Stroke="black"  RadiusY="3"  />
+
+
+        <Entry  Margin="45,-45,10,10" Placeholder="Адрес" Text="{Binding RegisterUser.Address2}"/>
+
+
+
+
+        <Button Margin="70,10,70,0" BackgroundColor="#BE3455" Text="Зарегистрироваться"/>
+
+    </VerticalStackLayout>
+</ContentPage>
