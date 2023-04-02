@@ -65,27 +65,24 @@ namespace FitStat.Mobile
             var ParsedDate = DateTime.ParseExact(Date, "dd.MM.yyyy", CultureInfo.InvariantCulture);
             var model = await _branchWebAPIService.GetTrainingForBranchAndDay(ParsedDate, Guid.Parse(string.IsNullOrEmpty(BranchCode) ? Guid.Empty.ToString() : BranchCode));
 
-            //if(model != null && model.Entity != null) 
+            //if(model != null && model.Entity != null)
             //    await Application.Current.MainPage.DisplayAlert("Проба метода...", string.Join(";\n", model.Entity), "OK");
 
             #region checking for null Удалить при исправлении и раскомментировать 2 строки выше
-            if (model != null && model.Entity != null)
-                await Application.Current.MainPage.DisplayAlert("!!!!!.", "nothing is null", "OK");
-
-            else if (model == null && model.Entity != null)
+            if (model != null) {
+                if (model.Entity == null)
+                    await Application.Current.MainPage.DisplayAlert("!!!!!.", "model.Entity == null; model.result: " + model.Result ?? "null", "OK");
+            }
+            else
                 await Application.Current.MainPage.DisplayAlert("!!!!!.", "model == null", "OK");
-
-            else if (model != null && model.Entity == null)
-                await Application.Current.MainPage.DisplayAlert("!!!!!.", "model.Entity == null", "OK");
-
-            else if (model == null && model.Entity == null)
-                await Application.Current.MainPage.DisplayAlert("!!!!!.", "all == null", "OK");
             #endregion
         }
 
         // Исправлено по видео от 11.03.2023
 
         // Исправлено по видео от 18.03.2023.
+
+        // 02.04.2023
         
         // При клике на кнопку Send Date and Branch - молчание
 
