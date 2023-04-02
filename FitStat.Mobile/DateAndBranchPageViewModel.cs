@@ -61,10 +61,9 @@ namespace FitStat.Mobile
         }
 
         
-        public async Task Post()
-        {
+        public async Task Post() {
             var ParsedDate = DateTime.ParseExact(Date, "dd.MM.yyyy", CultureInfo.InvariantCulture);
-            var model = await _branchWebAPIService.GetTrainingForBranchAndDay(ParsedDate,Guid.Parse(string.IsNullOrEmpty(BranchCode) ? Guid.Empty.ToString() : BranchCode));
+            var model = await _branchWebAPIService.GetTrainingForBranchAndDay(ParsedDate, Guid.Parse(string.IsNullOrEmpty(BranchCode) ? Guid.Empty.ToString() : BranchCode));
 
             //if(model != null && model.Entity != null) 
             //    await Application.Current.MainPage.DisplayAlert("Проба метода...", string.Join(";\n", model.Entity), "OK");
