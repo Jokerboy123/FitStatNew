@@ -15,7 +15,7 @@ namespace Services.WebAPIConsume {
         /// <summary>
         /// Метод получения переченя тренировок за день в филиале.
         /// </summary>
-        public async Task<EntityResponseModel<List<UserCheckListRowForShowWebAPI>>> GetTrainingForBranchAndDay(DateTime Date, Guid BranchCode) {
+        public async Task<EntityResponseModel<List<UserCheckListRowForShowWebAPI>>> GetTrainingForBranchAndDay(DateTime Date, Guid BranchCode) {             
             var requestResult = await _webSiteApiConsumeService.ConsumeService<EntityResponseModel<List<UserCheckListRowForShowWebAPI>>> (
                 _webSiteApiConsumeService.FormatRequestUrl(_settings.WebSiteBaseUrl, "GetTrainingForBranchAndDay"),
                 HttpMethod.Post, new { Date = Date, BranchCode = BranchCode });
