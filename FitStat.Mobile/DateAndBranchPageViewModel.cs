@@ -65,27 +65,29 @@ namespace FitStat.Mobile
             var ParsedDate = DateTime.ParseExact(Date, "dd.MM.yyyy", CultureInfo.InvariantCulture);
             var model = await _branchWebAPIService.GetTrainingForBranchAndDay(ParsedDate, Guid.Parse(string.IsNullOrEmpty(BranchCode) ? Guid.Empty.ToString() : BranchCode));
 
-            //if(model != null && model.Entity != null)
-            //    await Application.Current.MainPage.DisplayAlert("Проба метода...", string.Join(";\n", model.Entity), "OK");
+            if (model != null && model.Entity != null)
+                await Application.Current.MainPage.DisplayAlert("Проба метода...", string.Join(";\n", model.Entity), "OK");
 
             #region checking for null Удалить при исправлении и раскомментировать 2 строки выше
-            if (model != null) {
+            if (model == null)
+                await Application.Current.MainPage.DisplayAlert("!!!!!.", "model == null", "OK");
+            else if (model != null) {
+                //here 21/04/2023 - Настроил связь с бекендом
                 if (model.Entity == null)
                     await Application.Current.MainPage.DisplayAlert("!!!!!.", "model.Entity == null; model.result: " + model.Result ?? "null", "OK");
             }
-            else
+            else if (model == null)
                 await Application.Current.MainPage.DisplayAlert("!!!!!.", "model == null", "OK");
             #endregion
         }
+        // Кнопка "Отправить запрос" отвечает очень долго
 
         // Исправлено по видео от 11.03.2023.
 
         // Исправлено по видео от 18.03.2023.
 
         // 02.04.2023.
-        
-        // При клике на кнопку Send Date and Branch - молчание
 
-        // region checking for null  показывает, что model.Entity=null
+        // При клике на кнопку Send Date and Branch - молчание
     }
 }
