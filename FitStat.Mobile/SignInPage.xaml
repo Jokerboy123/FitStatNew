@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitStat.Mobile.SignInPage"
+             Title ="I am the SigIn Page "
+                          BackgroundColor="WhiteSmoke">
+    
+    <VerticalStackLayout>
+        <Label Text="Введите данные для входа" HorizontalOptions="CenterAndExpand" FontSize="Body" Margin="0,230,0,0"/>
+        <Rectangle  HorizontalOptions="CenterAndExpand" Margin="0, 10,0, 10" WidthRequest="380" HeightRequest="50" RadiusX="3" StrokeThickness="1" Stroke="black"  RadiusY="3"  />
+
+        <Entry Placeholder = "Логин" FontFamily="Helvetica" Margin="10, -60, 10, 0"
+                FontSize="22" MaxLength ="20" />
+
+
+        <Rectangle  HorizontalOptions="CenterAndExpand" Margin="0, 10,0, 10" WidthRequest="380" HeightRequest="50" RadiusX="3" StrokeThickness="1" Stroke="black"  RadiusY="3"  />
+
+        <Entry Placeholder = "Пароль" FontFamily="Helvetica"   Margin="10, -60, 10, 0"
+                FontSize="22" MaxLength ="20" />
+        <Button Text="Авторизоваться" Margin="100,5,100, 0" />
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitStat.Mobile.DateAndBranchPage"
+             BindingContext="local:DateAndBranchPageViewModel"
+             Title="DateAndBranchPage"
+             BackgroundColor="WhiteSmoke">
+    <VerticalStackLayout>
+        <Label Text="Введите Date и BrancheCode" HorizontalOptions="CenterAndExpand" FontSize="Body" Margin="0,230,0,0"/>
+        <Rectangle  HorizontalOptions="CenterAndExpand" Margin="0, 10,0, 10" WidthRequest="380" HeightRequest="50" RadiusX="3" StrokeThickness="1" Stroke="black"  RadiusY="3"  />
+
+        <Entry x:Name="Date" Placeholder = "Date" FontFamily="Helvetica" Margin="10, -60, 10, 0"
+                FontSize="22" MaxLength ="20" Text="{Binding Date}" />
+
+
+        <Rectangle  HorizontalOptions="CenterAndExpand" Margin="0, 10,0, 10" WidthRequest="380" HeightRequest="50" RadiusX="3" StrokeThickness="1" Stroke="black"  RadiusY="3"  />
+
+        <Entry x:Name="BranchCode" Placeholder = "BrancheCode" FontFamily="Helvetica"   Margin="10, -60, 10, 0"
+                FontSize="22" MaxLength ="36" Text="{Binding BranchCode}"/>
+
+        <Button Text="Отправить запрос" Margin="100,5,100, 0" 
+                Command="{Binding PostCommand}"
+                />
+    </VerticalStackLayout>
+</ContentPage>

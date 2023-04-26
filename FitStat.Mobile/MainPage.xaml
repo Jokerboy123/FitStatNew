@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FitStat.Mobile"
+             x:Class="FitStat.Mobile.MainPage"           
+             x:DataType="local:MainPageViewModel"
+             BindingContext="local:MainPageViewModel"
+             BackgroundImageSource="logo.jpg"
+             Shell.NavBarIsVisible="False"
+                          BackgroundColor="WhiteSmoke">
+
+
+    <ScrollView>
+        <VerticalStackLayout
+            VerticalOptions="Start">
+            <Button
+                Margin="0,350,0,10"
+                x:Name="EntryBtn"
+                BackgroundColor="DarkBlue"
+                Text="Вход"
+                FontSize="15"
+                BorderColor="DarkBlue"
+                BorderWidth="2"
+                HeightRequest="40"
+                WidthRequest="300"
+                CornerRadius="15"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Command="{Binding SignInCommand}"               
+                HorizontalOptions="Center"/>
+            <Button
+                Margin="0" 
+                x:Name="RegBtn"
+                BackgroundColor="DarkBlue"
+                Text="Регистрация"
+                FontSize="15"
+                BorderColor="DarkBlue"
+                BorderWidth="2"
+                HeightRequest="40"
+                WidthRequest="300"
+                CornerRadius="15"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Command="{Binding RegistryCommand}"    
+                HorizontalOptions="Center"/>
+                
+                <Button
+                Margin="0,10,0,10"
+                Text="Send Date и BranchCode в Postman"
+                x:Name="InputDateAndBranchBtn"
+                BackgroundColor="DarkBlue"
+                FontSize="15"
+                Command="{Binding DateAndBranchCommand}"
+                BorderColor="DarkBlue"
+                BorderWidth="2"
+                HeightRequest="40"
+                WidthRequest="300"
+                CornerRadius="15"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Center"/>
+
+
+                    <Label
+                Margin="7"
+                TextDecorations="Underline"
+                Text="Продолжить без авторизации"
+                TextColor="White"
+                HorizontalOptions="Center">   
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding UnRegistryCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
