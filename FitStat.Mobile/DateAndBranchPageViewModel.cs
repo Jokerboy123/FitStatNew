@@ -62,7 +62,7 @@ namespace FitStat.Mobile
 
         
         public async Task Post() {
-            var ParsedDate = DateTime.ParseExact(Date, "dd.MM.yyyy", CultureInfo.InvariantCulture);
+            var ParsedDate = DateTime.ParseExact(string.IsNullOrEmpty(Date) ? DateTime.Now.Date.ToString("dd.MM.yyyy") : Date, "dd.MM.yyyy", CultureInfo.InvariantCulture);
             var model = await _branchWebAPIService.GetTrainingForBranchAndDay(ParsedDate, Guid.Parse(string.IsNullOrEmpty(BranchCode) ? Guid.Empty.ToString() : BranchCode));
 
             if (model != null && model.Entity != null)
