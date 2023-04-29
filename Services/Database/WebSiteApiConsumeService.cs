@@ -83,7 +83,7 @@ namespace Services.Database
 
         public string FormatRequestUrl(string baseUrl, string requestUrl)
         {
-            return (baseUrl ?? "") + "/webapi/" + _settings.ApiVersionKey + (requestUrl ?? "").TrimStart(new char[] { '/' });
+            return (baseUrl ?? "") + "/webapi/" + _settings.ApiVersionKey + "/" + (requestUrl ?? "").TrimStart(new char[] { '/' });
         }
     }
 }
