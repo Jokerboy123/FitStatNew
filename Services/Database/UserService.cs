@@ -20,13 +20,6 @@ using System.Diagnostics.Contracts;
 namespace Services.Database
 {
 
-
-    // сделать еще один сервис по аналогии с UserService, назвать его WebSiteApiConsumeService 
-    // взять у Гены код, который выполняет запросы к сайту по HTTP
-    // встроить этот код в WebSiteApiConsumeService
-    //в мобильном приложении сделать страницу, при заходе на которую будет два текстовых поля - дата и branchcode, кнопка для отправки запроса
-    //по нажатию на кнопку - отправляем запрос к веб-методу сервиса сайта - как в примере в постмане, передаем туда дату и branchcode
-    // веб апи (web api) в asp core, http client .net core (metanit , документация microsoft)
     public class UserService : IUserService
     {
 		private readonly IRepositoryManager _repositoryManager;
@@ -38,16 +31,7 @@ namespace Services.Database
 			_repositoryManager = repositoryManager ?? throw new ArgumentNullException(nameof(repositoryManager));
 			_serviceManager = serviceManager ?? throw new ArgumentNullException(nameof(serviceManager));
 		}
-        /*************************************************************************************/
-        /*
-			+         0) исправить ошибки в проекте для того чтобы он запускался (ошибка запуска)
-			+ (скрин) 1) дописать вызов из _userRepository метода DeleteUserAsync - таймкод примерно 1:06:00
-			+		  2) почитать про async await
-			+		  3) почитать про шаблоны в языке программирования C#
-			4) почитать про внедрение зависимостей (Dependency Injection, DI) и использование в MAUI
-			5) реализовать создание экземпляра класса UserService в интерфейсной части, т.е. внутри проекта Batischev_FitStat.Mobile
-		*/
-        /*************************************************************************************/
+
         public async Task<bool> DeleteUserAsync(UserDto User) 
 		{
             try
@@ -80,7 +64,7 @@ namespace Services.Database
 
         public Task<UserDto> SaveUser()
         {
-            throw new NotImplementedException();  // Почему "метод не реализован"
+            throw new NotImplementedException(); 
         }
         /*************************************************************************************/
 

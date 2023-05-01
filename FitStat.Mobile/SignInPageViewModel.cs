@@ -13,81 +13,79 @@ using Services;
 using Services.Abstractions;
 using Services.WebAPIConsume;
 using System.Globalization;
+using Services.IWebAPIConsume;
 
 namespace FitStat.Mobile
 {
-    public class DateAndBranchPageViewModel
+    public class SignInPageViewModel
     {
-        private string _date;
-        private string _branchCode;
+        private int _login;
+        private int _password;
         public event PropertyChangedEventHandler? PropertyChanged;
-        public string Date
+
+        public int Login
         {
-            get => _date;
-            set 
+            get => _login;
+            set
             {
-                if (_date != value)
+                if (_login != value)
                 {
-                    _date = value;
+                    _login = value;
                     OnPropertyChanged();
                 }
             }
         }
 
-        public string BranchCode
+        public int Password
         {
-            get => _branchCode;
+            get => _password;
             set
             {
-                if(_branchCode != value)
+                if (_password != value)
                 {
-                    _branchCode = value;
+                    _password = value;
                     OnPropertyChanged();
                 }
             }
         }
-        
-        public void OnPropertyChanged([CallerMemberName] string prop = "")  {
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
 
-
         public ICommand PostCommand { get; set; }
-        private BranchWebAPIService _branchWebAPIService;
-        public DateAndBranchPageViewModel()
+        // наподобие с private BranchWebAPIService _branchWebAPIService; подключить какой-то нужный сервис
+
+        public SignInPageViewModel()
         {
             PostCommand = new Command(async () => await Post());
-            _branchWebAPIService = new BranchWebAPIService(new SettingsInfo(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData))));
+            //чем-то заменить _branchWebAPIService = new BranchWebAPIService(new SettingsInfo(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData))));
         }
-        
+        public async Task Post()
+        {
+            /*
+            var ParsedLogin = Login.ToString();
+            var model = await _branchWebAPIService.GetTrainingForBranchAndDay(Pars, Guid.Parse(string.IsNullOrEmpty(BranchCode) ? Guid.Empty.ToString() : BranchCode));
 
-        public async Task Post() {
-            var ParsedDate = DateTime.ParseExact(string.IsNullOrEmpty(Date) ? DateTime.Now.Date.ToString("dd.MM.yyyy") : Date, "dd.MM.yyyy", CultureInfo.InvariantCulture);
-            var model = await _branchWebAPIService.GetTrainingForBranchAndDay(ParsedDate, Guid.Parse(string.IsNullOrEmpty(BranchCode) ? Guid.Empty.ToString() : BranchCode));
-            
             if (model != null && model.Entity != null)
                 await Application.Current.MainPage.DisplayAlert("Проба метода...", string.Join(";\n", model.Entity), "OK");
 
             #region checking for null Удалить при исправлении и раскомментировать 2 строки выше
             if (model == null)
                 await Application.Current.MainPage.DisplayAlert("!!!!!.", "model == null", "OK");
-            else if (model != null) {
-                //here 21/04/2023 - Настроил связь с бекендом
+            else if (model != null)
+            {
                 if (model.Entity == null)
                     await Application.Current.MainPage.DisplayAlert("!!!!!.", "model.Entity == null; model.result: " + model.Result ?? "null", "OK");
             }
             else if (model == null)
                 await Application.Current.MainPage.DisplayAlert("!!!!!.", "model == null", "OK");
             #endregion
+            */
         }
-        // Кнопка "Отправить запрос" отвечает очень долго
 
-        // Исправлено по видео от 11.03.2023.
 
-        // Исправлено по видео от 18.03.2023.
 
-        // 02.04.2023.
 
-        // При клике на кнопку Send Date and Branch - молчание
     }
 }
