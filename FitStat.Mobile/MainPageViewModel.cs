@@ -19,7 +19,7 @@ namespace FitStat.Mobile
         public ICommand RegistryCommand { get; set; }
         public ICommand DateAndBranchCommand { get; set; }
         public IServiceManager serviceManager { get; set; }
-        //здесь необходимо использовать IServiceManager и вызывать из него какой-то сервис 14.01.2023 - сделано
+
         public MainPageViewModel()
         {
             SignInCommand = new Command(async () => await SignIn());
@@ -34,7 +34,7 @@ namespace FitStat.Mobile
 
         public async Task DateAndBranch() => await Shell.Current.GoToAsync("DateAndBranchPage");
         public async Task Registry()      => await Shell.Current.GoToAsync("RegistryPage");
-        public async Task UnRegistry()    => await Application.Current.MainPage.DisplayAlert("Ознакомительный режим", "В этом приложении собраны тренировки на все группы мышц. Используя это приложение, всего за несколько дней можно накачать мышцы и улучшить свою физическую форму. Для тренировок в этом приложении не требуется специальное оборудование, что делает использование универсальным - можно заниматься в любое время и в любом месте.", "", "Закрыть");
+        public async Task UnRegistry()    => await Application.Current.MainPage.DisplayAlert("Ознакомительный режим", "Для продолжения работы необходимо авторизоваться. При помощи этого приложения Вы можете получить график своей тренировки.", "", "Закрыть");
         public async Task SignIn()        => await Shell.Current.GoToAsync("SignInPage");
 
         //public async Task SignIn()

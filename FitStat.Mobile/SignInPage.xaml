@@ -2,26 +2,28 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FitStat.Mobile.SignInPage"
+
              Title ="Страница входа"
                           BackgroundColor="#1D1467">
     
     <VerticalStackLayout>
+
         <Label Text="Введите данные для входа" TextColor="WhiteSmoke" HorizontalOptions="CenterAndExpand" FontSize="Body" Margin="0,260,0,10"/>
 
-        <Frame BackgroundColor="WhiteSmoke"  Margin="10, 0, 10, 0">
-            <Entry Placeholder = "Логин" BackgroundColor="WhiteSmoke"  FontFamily="Helvetica" Margin="-16, -16, -16, -16"
-                FontSize="22" MaxLength ="20" />
+        <Frame BackgroundColor="WhiteSmoke" CornerRadius="30" Margin="10, 0, 10, 0">
+            <Entry Placeholder = "Логин" BackgroundColor="WhiteSmoke" HorizontalOptions="Center"  FontFamily="Helvetica" Margin="-16, -16, -16, -16"
+                FontSize="22" MaxLength ="20" Text="{Binding Login}" />
         </Frame>
 
 
 
 
-        <Frame BackgroundColor="WhiteSmoke"  Margin="10, 10, 10, 0">
-            <Entry Placeholder = "Пароль" BackgroundColor="WhiteSmoke"  FontFamily="Helvetica" Margin="-16, -16, -16, -16"
-                FontSize="22" MaxLength ="20" />
+        <Frame BackgroundColor="WhiteSmoke"  CornerRadius="30"  Margin="10, 10, 10, 0">
+            <Entry Placeholder = "Пароль" IsPassword="True" HorizontalOptions="Center" BackgroundColor="WhiteSmoke"  FontFamily="Helvetica" Margin="-16, -16, -16, -16"
+                FontSize="22" MaxLength ="20" Text="{Binding Password}"/>
         </Frame>
-        
-        <Button Text="Авторизоваться" Margin="100,10,100, 0" CornerRadius="15" />
+
+        <Button Text="Авторизоваться" Margin="100,10, 100, 0" CornerRadius="30" Command="{Binding PostCommand}" />
 
     </VerticalStackLayout>
 </ContentPage>

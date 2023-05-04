@@ -19,11 +19,11 @@ namespace FitStat.Mobile
 {
     public class SignInPageViewModel
     {
-        private int _login;
-        private int _password;
+        private string _login;
+        private string _password;
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public int Login
+        public string Login
         {
             get => _login;
             set
@@ -36,7 +36,7 @@ namespace FitStat.Mobile
             }
         }
 
-        public int Password
+        public string Password
         {
             get => _password;
             set
@@ -54,38 +54,18 @@ namespace FitStat.Mobile
         }
 
         public ICommand PostCommand { get; set; }
-        // наподобие с private BranchWebAPIService _branchWebAPIService; подключить какой-то нужный сервис
+        private UserWebAPIService _userWebAPIService;
 
         public SignInPageViewModel()
         {
             PostCommand = new Command(async () => await Post());
-            //чем-то заменить _branchWebAPIService = new BranchWebAPIService(new SettingsInfo(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData))));
+            _userWebAPIService = new UserWebAPIService(new SettingsInfo(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData))));
         }
-        public async Task Post()
-        {
-            /*
-            var ParsedLogin = Login.ToString();
-            var model = await _branchWebAPIService.GetTrainingForBranchAndDay(Pars, Guid.Parse(string.IsNullOrEmpty(BranchCode) ? Guid.Empty.ToString() : BranchCode));
+        public async Task Post() {
+            var model = await _userWebAPIService.LoginUser(Login, Password);
 
             if (model != null && model.Entity != null)
-                await Application.Current.MainPage.DisplayAlert("Проба метода...", string.Join(";\n", model.Entity), "OK");
-
-            #region checking for null Удалить при исправлении и раскомментировать 2 строки выше
-            if (model == null)
-                await Application.Current.MainPage.DisplayAlert("!!!!!.", "model == null", "OK");
-            else if (model != null)
-            {
-                if (model.Entity == null)
-                    await Application.Current.MainPage.DisplayAlert("!!!!!.", "model.Entity == null; model.result: " + model.Result ?? "null", "OK");
-            }
-            else if (model == null)
-                await Application.Current.MainPage.DisplayAlert("!!!!!.", "model == null", "OK");
-            #endregion
-            */
+                await Application.Current.MainPage.DisplayAlert("Проба метода...", model.Entity.UserName, "OK");
         }
-
-
-
-
     }
 }
