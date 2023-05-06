@@ -65,7 +65,14 @@ namespace FitStat.Mobile
             var model = await _userWebAPIService.LoginUser(Login, Password);
 
             if (model != null && model.Entity != null)
-                await Application.Current.MainPage.DisplayAlert("Проба метода...", model.Entity.UserName, "OK");
+
+            await Application.Current.MainPage.DisplayAlert("Вход... ", "Добро пожаловать, " + model.Entity.FirstName, "OK");
+
+            await Shell.Current.GoToAsync("UserAccountPage");
+
+
+
+
         }
     }
 }

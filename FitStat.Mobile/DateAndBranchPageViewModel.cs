@@ -68,17 +68,7 @@ namespace FitStat.Mobile
             if (model != null && model.Entity != null)
                 await Application.Current.MainPage.DisplayAlert("Проба метода...", string.Join(";\n", model.Entity), "OK");
 
-            #region checking for null Удалить при исправлении и раскомментировать 2 строки выше
-            if (model == null)
-                await Application.Current.MainPage.DisplayAlert("!!!!!.", "model == null", "OK");
-            else if (model != null) {
-                //here 21/04/2023 - Настроил связь с бекендом
-                if (model.Entity == null)
-                    await Application.Current.MainPage.DisplayAlert("!!!!!.", "model.Entity == null; model.result: " + model.Result ?? "null", "OK");
-            }
-            else if (model == null)
-                await Application.Current.MainPage.DisplayAlert("!!!!!.", "model == null", "OK");
-            #endregion
+          
         }
         // Кнопка "Отправить запрос" отвечает очень долго
 

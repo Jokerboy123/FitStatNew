@@ -12,6 +12,7 @@
 
             Routing.RegisterRoute("DateAndBranchPage", typeof(DateAndBranchPage));
 
+            Routing.RegisterRoute("UserAccountPage", typeof(UserAccountPage));
 
 
             //var builder = builder.bild

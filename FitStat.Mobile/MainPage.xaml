@@ -17,6 +17,7 @@
                 Margin="0,350,0,10"
                 x:Name="EntryBtn"
                 BackgroundColor="DarkBlue"
+                TextColor="WhiteSmoke"
                 Text="Вход"
                 FontSize="15"
                 BorderColor="DarkBlue"
@@ -29,6 +30,7 @@
                 HorizontalOptions="Center"/>
             <Button
                 Margin="0" 
+                TextColor="WhiteSmoke"
                 x:Name="RegBtn"
                 BackgroundColor="DarkBlue"
                 Text="Регистрация"
@@ -42,7 +44,8 @@
                 Command="{Binding RegistryCommand}"    
                 HorizontalOptions="Center"/>
                 
-                <Button
+            <Button
+                TextColor="WhiteSmoke"
                 Margin="0,10,0,10"
                 Text="Send Date и BranchCode в Postman"
                 x:Name="InputDateAndBranchBtn"
@@ -58,7 +61,7 @@
                 HorizontalOptions="Center"/>
 
 
-                    <Label
+            <Label
                 Margin="7"
                 TextDecorations="Underline"
                 Text="Продолжить без авторизации"
