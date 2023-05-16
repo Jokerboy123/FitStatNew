@@ -34,7 +34,7 @@ namespace FitStat.Mobile
 
         public async Task DateAndBranch() => await Shell.Current.GoToAsync("DateAndBranchPage");
         public async Task Registry()      => await Shell.Current.GoToAsync("RegistryPage");
-        public async Task UnRegistry()    => await Application.Current.MainPage.DisplayAlert("Ознакомительный режим", "Для продолжения работы необходимо авторизоваться. При помощи этого приложения Вы можете получить график своей тренировки.", "", "Закрыть");
+        public async Task UnRegistry()    => await Application.Current.MainPage.DisplayAlert("Информация о посещении:", "Последняя посещенная группа: \"Aэробика\"", "", "Закрыть");
         public async Task SignIn()        => await Shell.Current.GoToAsync("SignInPage");
 
         //public async Task SignIn()

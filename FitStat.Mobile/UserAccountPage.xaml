@@ -2,11 +2,25 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FitStat.Mobile.UserAccountPage"
-             Title="UserAccounPage">
+             BackgroundColor="WhiteSmoke"
+             Title="UserAccountPage">
     <VerticalStackLayout>
         <Label 
-            Text="{x:Reference name}"
+            Text="Выбор дня из календаря"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <DatePicker x:Name="DP" Format="dd.MM.yyyy" BindingContext="DP" Date="{Binding SelectedDate}">
+            <DatePicker.MinimumDate>01.01.2001</DatePicker.MinimumDate>
+            <DatePicker.MaximumDate>01.01.2101</DatePicker.MaximumDate>
+
+        </DatePicker>
+        
+        <Label Text="{Binding DateTime, StringFormat='{0:T}'}"
+           FontSize="18"
+           HorizontalOptions="Center"
+           VerticalOptions="Center" />
+
+
+
     </VerticalStackLayout>
 </ContentPage>

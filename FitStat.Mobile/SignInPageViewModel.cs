@@ -66,9 +66,9 @@ namespace FitStat.Mobile
 
             if (model != null && model.Entity != null)
 
-            await Application.Current.MainPage.DisplayAlert("Вход... ", "Добро пожаловать, " + model.Entity.FirstName, "OK");
+             //   await Application.Current.MainPage.DisplayAlert("Вход... ", "Добро пожаловать, " + model.Entity.FirstName, "OK");
 
-            await Shell.Current.GoToAsync("UserAccountPage");
+            await Shell.Current.GoToAsync("DateAndBranchPage");
 
 
 

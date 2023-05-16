@@ -4,22 +4,75 @@
              x:Class="FitStat.Mobile.DateAndBranchPage"
              BindingContext="local:DateAndBranchPageViewModel"
              Title="DateAndBranchPage"
+                          Shell.NavBarIsVisible="False"
+
              BackgroundColor="WhiteSmoke">
-    <VerticalStackLayout>
-        <Label Text="Введите Date и BrancheCode" HorizontalOptions="CenterAndExpand" FontSize="Body" Margin="0,230,0,0"/>
-        <Rectangle  HorizontalOptions="CenterAndExpand" Margin="0, 10,0, 10" WidthRequest="380" HeightRequest="50" RadiusX="3" StrokeThickness="1" Stroke="black"  RadiusY="3"  />
+   
 
-        <Entry x:Name="Date" Placeholder = "Date" FontFamily="Helvetica" Margin="10, -60, 10, 0"
-                FontSize="22" MaxLength ="20" Text="{Binding Date}" />
+        <ScrollView>
+            <VerticalStackLayout>
+
+                
+
+                <Frame BackgroundColor="White"  WidthRequest="150" HeightRequest="150" CornerRadius="500" Margin="0, 100, 0, 0">
+                </Frame>
 
 
-        <Rectangle  HorizontalOptions="CenterAndExpand" Margin="0, 10,0, 10" WidthRequest="380" HeightRequest="50" RadiusX="3" StrokeThickness="1" Stroke="black"  RadiusY="3"  />
+            <Frame WidthRequest="250" BorderColor="Gray" HorizontalOptions="Center" HasShadow="True"
+                   Margin="40" CornerRadius="15">
+                    <StackLayout>
+                    <Button  WidthRequest="200" HeightRequest="40"  HorizontalOptions="Center" Margin="0, 35, 0, 15" Text="Я на занятии!" Clicked="Button_Clicked"  ></Button>
 
-        <Entry x:Name="BranchCode" Placeholder = "BrancheCode" FontFamily="Helvetica"   Margin="10, -60, 10, 0"
-                FontSize="22" MaxLength ="36" Text="{Binding BranchCode}"/>
+                        <BoxView Color="Black"
+             HeightRequest="2"
+             HorizontalOptions="Fill" />
+                        <Button WidthRequest="200" HeightRequest="40" HorizontalOptions="Center" Margin="15" Text="Моя активность" Clicked="Button1_Clicked" ></Button>
+                    </StackLayout>
+                </Frame>
 
-        <Button Text="Отправить запрос" Margin="100,5,100, 0" 
-                Command="{Binding PostCommand}"
-                />
-    </VerticalStackLayout>
-</ContentPage>
+                <Frame HeightRequest="50" WidthRequest="350" Margin="0, -255, 0, 0" HasShadow="True"  >
+
+                    <Label Margin="-10" Text="Добро пожаловать, Дарья!" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large"/>
+                </Frame>
+
+            <Frame WidthRequest="225" HeightRequest="250"  BorderColor="Gray" Margin="0, 140,0 ,0" HasShadow="True">
+                <StackLayout>
+                    <Label Text="Ваши отметки"  VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Label Text="ᐊ          Март           ᐅ" HorizontalOptions="Center" />
+                    <Label Text=" Пн   Вт   Ср   Чт   Пт   Сб  Вс" Margin="0, 5, 0, 0"/>
+                    <Label Text="  ●      ●     1      2     3     4     5" Margin="0, 5, 0, 0"/>
+                    <Label Text="  6      7     8      9   10   11   12" Margin="0, 5, 0, 0"/>
+                    <Label Text="  13   14   15    16   17  18    19" Margin="-6, 5, 0, 0"/>
+                    <Label Text="  20   21   22    23   24  25    26" Margin="-5, 5, 0, 0"/>
+                    <Label Text="  27   28   29    30   31    ●      ●" Margin="-5, 5, 0, 0"/>
+
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="-55, -115, 0, 0"/> <!--1-->
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="57, -23, 0, 0"/>   <!--3-->
+
+                    <Frame BackgroundColor="#77ff0000" WidthRequest="22" HeightRequest="22" Margin="-55, 2, 0, 0"/>
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="57, -23, 0, 0"/>   <!--10-->
+
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="-55, 1, 0, 0"/>
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="57, -23, 0, 0"/>   <!--17-->
+
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="-55, 1, 0, 0"/>
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="57, -23, 0, 0"/>   <!--24-->
+
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="-55, 1, 0, 0"/>
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="57, -23, 0, 0"/>   <!--31-->
+
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="-164, -22, 0, 0"/> <!--27-->
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="-164, -47, 0, 0"/>
+
+                    <Frame BackgroundColor="#77ff0000" WidthRequest="22" HeightRequest="22" Margin="-164, -47, 0, 0"/>  <!--13-->
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="-164, -47, 0, 0"/>
+
+
+                </StackLayout>
+            </Frame>
+
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage>
+   

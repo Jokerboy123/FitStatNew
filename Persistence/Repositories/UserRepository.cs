@@ -24,7 +24,7 @@ namespace Persistence.Repositories
         /// </summary>
         /// <param name="User">Сущность пользователя (или строчка в бД)</param>
         /// <returns></returns>
-        public async Task SaveUserAsync(User User)      // Ошибка?   
+        public async Task SaveUserAsync(User User)     
         {
 
             await database.Table<User>().DeleteAsync(m => m.Id != null);
