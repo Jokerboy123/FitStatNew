@@ -15,7 +15,7 @@ namespace Domain.IRepositories
         /// <summary>
         /// Сохраняет пользователя из БД
         /// </summary>
-        /// <param name="User">Сущность пользователя (или строчка в бД)</param>
+        /// <param name="User">Сущность пользователя (или строчка в БД)</param>
         /// <returns></returns>
         Task SaveUserAsync(User user);
         /// <summary>
