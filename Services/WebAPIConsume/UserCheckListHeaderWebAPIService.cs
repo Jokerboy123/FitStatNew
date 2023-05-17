@@ -12,7 +12,7 @@ namespace Services.WebAPIConsume {
             _settings = settings;
         }
         /// <summary>
-        /// Метод выставление отметки пользователя о присутсвии на занятии.
+        /// Метод выставление отметки пользователя о присутствии на занятии. - 1 апи метод
         /// </summary>
         public async Task<EntityResponseModel<BaseModel>> SetCheckByUserInSpace(Guid UserId, Guid MemberSpaceInSeasonId, Guid WorkTimeId) {
             var requestResult = await _webSiteApiConsumeService.ConsumeService<EntityResponseModel<BaseModel>>(
@@ -21,7 +21,7 @@ namespace Services.WebAPIConsume {
             return requestResult;
         }
         /// <summary>
-        /// Метод подтверждения отметки пользователя на занятии.
+        /// Метод подтверждения отметки пользователя на занятии. - 2 апи метод
         /// </summary>
         public async Task<EntityResponseModel<BaseModel>> ApproveUserCheckRowToday(Guid IdRow, Guid UserId) {
             var requestResult = await _webSiteApiConsumeService.ConsumeService<EntityResponseModel<BaseModel>>(

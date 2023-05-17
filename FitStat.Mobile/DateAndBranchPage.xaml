@@ -21,21 +21,58 @@
             <Frame WidthRequest="250" BorderColor="Gray" HorizontalOptions="Center" HasShadow="True"
                    Margin="40" CornerRadius="15">
                     <StackLayout>
-                    <Button  WidthRequest="200" HeightRequest="40"  HorizontalOptions="Center" Margin="0, 35, 0, 15" Text="Я на занятии!" Clicked="Button_Clicked"  ></Button>
+                    <Button  WidthRequest="200" HeightRequest="40"  HorizontalOptions="Center" Margin="0, 35, 0, 15" Text="Отметить участников" Clicked="Button_Clicked"  ></Button>
 
                         <BoxView Color="Black"
              HeightRequest="2"
              HorizontalOptions="Fill" />
-                        <Button WidthRequest="200" HeightRequest="40" HorizontalOptions="Center" Margin="15" Text="Моя активность" Clicked="Button1_Clicked" ></Button>
+                        <Button WidthRequest="200" HeightRequest="40" HorizontalOptions="Center" Margin="15" Text="Отметить участников" Clicked="Button1_Clicked" ></Button>
                     </StackLayout>
                 </Frame>
 
                 <Frame HeightRequest="50" WidthRequest="350" Margin="0, -255, 0, 0" HasShadow="True"  >
 
-                    <Label Margin="-10" Text="Добро пожаловать, Дарья!" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large"/>
+                    <Label Margin="-10" Text="Добро пожаловать, Игорь!" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large"/>
                 </Frame>
 
-            <Frame WidthRequest="225" HeightRequest="250"  BorderColor="Gray" Margin="0, 140,0 ,0" HasShadow="True">
+            <Frame WidthRequest="225" HeightRequest="350"  BorderColor="Gray" Margin="0, 140,0 ,0" HasShadow="True">
+                <StackLayout>
+                    <Frame Padding="10, 15, 0, 5">
+                        <StackLayout>
+                            <Label Text="   Парусова Дарья"  Margin="-10, 5, 0, 0"/>
+                            <BoxView WidthRequest="3" HeightRequest="25" Color="Gray" Margin="40, -20 , -50, 0" CornerRadius="50"/>
+                            <Button Text="✔" Padding="-5" Margin="90, -28, -40, 10" BackgroundColor="Green" HeightRequest="30" WidthRequest="30"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame Margin="0,5,0,0" Padding="10, 15, 0, 5">
+                        <StackLayout>
+                            <Label Text="   Адрианов Егор"  Margin="-10, 5, 0, 0"/>
+                            <BoxView WidthRequest="3" HeightRequest="25" Color="Gray" Margin="40, -20 , -50, 0" CornerRadius="50"/>
+                            <Button Text="✘" Padding="-5" Margin="90, -28, -40, 10" BackgroundColor="Red" HeightRequest="30" WidthRequest="30"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame Margin="0,5,0,0" Padding="10, 15, 0, 5">
+                        <StackLayout>
+                            <Label Text="   Изборский Антон"  Margin="-10, 5, 0, 0"/>
+                            <BoxView WidthRequest="3" HeightRequest="25" Color="Gray" Margin="40, -20 , -50, 0" CornerRadius="50"/>
+                            <Button Text="✘" Padding="-5" Margin="90, -28, -40, 10" BackgroundColor="Red" HeightRequest="30" WidthRequest="30"/>
+                        </StackLayout>
+                    </Frame>
+                    
+                    <Frame Margin="0,5,0,0" Padding="10, 15, 0, 5">
+                        <StackLayout>
+                            <Label Text="   Бессонова Ольга"  Margin="-10, 5, 0, 0"/>
+                            <BoxView WidthRequest="3" HeightRequest="25" Color="Gray" Margin="40, -20 , -50, 0" CornerRadius="50"/>
+                            <Button Text="✘" Padding="-5" Margin="90, -28, -40, 10" BackgroundColor="Red" HeightRequest="30" WidthRequest="30"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+
+
+            <!--<Frame WidthRequest="225" HeightRequest="250"  BorderColor="Gray" Margin="0, 140,0 ,0" HasShadow="True">
                 <StackLayout>
                     <Label Text="Ваши отметки"  VerticalOptions="Center" HorizontalOptions="Center" />
                     <Label Text="ᐊ          Март           ᐅ" HorizontalOptions="Center" />
@@ -46,30 +83,30 @@
                     <Label Text="  20   21   22    23   24  25    26" Margin="-5, 5, 0, 0"/>
                     <Label Text="  27   28   29    30   31    ●      ●" Margin="-5, 5, 0, 0"/>
 
-                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="-55, -115, 0, 0"/> <!--1-->
-                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="57, -23, 0, 0"/>   <!--3-->
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="-55, -115, 0, 0"/> --><!--1--><!--
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="57, -23, 0, 0"/>   --><!--3--><!--
 
                     <Frame BackgroundColor="#77ff0000" WidthRequest="22" HeightRequest="22" Margin="-55, 2, 0, 0"/>
-                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="57, -23, 0, 0"/>   <!--10-->
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="57, -23, 0, 0"/>   --><!--10--><!--
 
                     <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="-55, 1, 0, 0"/>
-                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="57, -23, 0, 0"/>   <!--17-->
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="57, -23, 0, 0"/>   --><!--17--><!--
 
                     <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="-55, 1, 0, 0"/>
-                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="57, -23, 0, 0"/>   <!--24-->
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="57, -23, 0, 0"/>   --><!--24--><!--
 
                     <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="-55, 1, 0, 0"/>
-                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="57, -23, 0, 0"/>   <!--31-->
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="57, -23, 0, 0"/>   --><!--31--><!--
 
-                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="-164, -22, 0, 0"/> <!--27-->
+                    <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="-164, -22, 0, 0"/> --><!--27--><!--
                     <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="-164, -47, 0, 0"/>
 
-                    <Frame BackgroundColor="#77ff0000" WidthRequest="22" HeightRequest="22" Margin="-164, -47, 0, 0"/>  <!--13-->
+                    <Frame BackgroundColor="#77ff0000" WidthRequest="22" HeightRequest="22" Margin="-164, -47, 0, 0"/>  --><!--13--><!--
                     <Frame BackgroundColor="#770000ff" WidthRequest="22" HeightRequest="22" Margin="-164, -47, 0, 0"/>
 
 
                 </StackLayout>
-            </Frame>
+            </Frame>-->
 
 
             </VerticalStackLayout>
